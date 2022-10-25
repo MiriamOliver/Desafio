@@ -423,7 +423,7 @@ th {
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
+    width: 100%;
     padding: 0;
   }
 }
@@ -434,7 +434,7 @@ th {
   }
   .column,
 .columns {
-    margin-left: 4%;
+    margin-left: 0;
   }
   .column:first-child,
 .columns:first-child {
@@ -1061,8 +1061,8 @@ body.tema.claro .barraDeProgreso div.barra {
 }
 
 :root {
-  /* --titulos:;
-  --titulillo:; */
+  --titulos:600;
+  /*--titulillo:; */
   --enlaces: 300;
   --enlacesdestacado:500;
   --tampequenio:10pt;
@@ -1198,7 +1198,7 @@ body.tema.claro .barraDeProgreso div.barra {
 
 .navegador nav {
   background-color: black;
-  width: 90%;
+  width: 100%;
   height: 90vh;
   overflow: hidden;
 }
@@ -1230,6 +1230,66 @@ body.tema.claro .barraDeProgreso div.barra {
 }
 .navegador nav ul li:last-child {
   margin-top: 12vh;
+}
+
+.contenedor .tablero {
+  width: 104.8%;
+  background-color: rgb(213, 213, 213);
+  padding: 1em;
+}
+.contenedor .panel {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  margin: 8vh 1% 0 1%;
+  background-color: white;
+  border-radius: 10px;
+}
+.contenedor .panel .titulo {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+}
+.contenedor .panel .titulo h5 {
+  font-weight: var(--titulos);
+  margin: 0 auto;
+  text-align: center;
+}
+.contenedor .panel .mas {
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 10px 10px;
+}
+.contenedor .panel .mas button {
+  background-color: black;
+  color: white;
+  border-radius: 2em;
+  margin: 0;
+}
+.contenedor .panel .grupotarjeta {
+  background-color: black;
+  padding: 1em;
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+.contenedor .panel .grupotarjeta .tarjetas {
+  background-color: rgb(244, 244, 244);
+  border-radius: 10px;
+  padding: 2em;
+  margin-top: 1em;
+}
+.contenedor .panel .grupotarjeta .tarjetas:first-child {
+  margin-top: 0;
+}
+.contenedor .panel .grupotarjeta::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ccc;
+}
+.contenedor .panel .grupotarjeta::-webkit-scrollbar-thumb {
+  background: rgb(45, 45, 45);
+  border-radius: 4px;
+}
+.contenedor .panel .grupotarjeta::-webkit-scrollbar-thumb:active {
+  background-color: #0e0e0e;
 }
 
 @media (min-width: 550px) {
