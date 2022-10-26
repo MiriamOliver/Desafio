@@ -148,7 +148,7 @@ $fondoTemaOscuro: rgb(115,115,115);
 .navegador nav{
     background-color: black;
     width: 100%;
-    height: 90vh;
+    height: 83.6vh;
     overflow: hidden;
     ul{
         margin: 10vh auto;
@@ -241,6 +241,14 @@ $fondoTemaOscuro: rgb(115,115,115);
         }
     }
     
+}
+footer{
+    background-color: black;
+    text-align: center;
+    padding: 1.5vh;
+    span{
+        color: white;
+    }
 }
 
 
