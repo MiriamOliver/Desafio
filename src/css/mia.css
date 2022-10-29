@@ -1046,18 +1046,187 @@ there.
   }
 }
 /* Larger than Desktop HD */
-body.tema.claro .barraDeProgreso {
+.barraDeProgreso {
   border: 1px solid black;
   border-radius: 5px;
   display: block;
-  width: 80%;
+  width: 60%;
+  margin: 2em 0 1em 0;
 }
-body.tema.claro .barraDeProgreso div.barra {
+.barraDeProgreso div.barra {
   display: block;
   height: 1em;
-  width: 30%;
+  width: 10%;
   border-radius: 5px;
-  background-color: blue;
+  background-color: black;
+}
+
+.modaltask {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  text-align: justify;
+  border-radius: 2vh;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.modal-content .contenedor-close {
+  border-radius: 2vh 2vh 0 0;
+  width: 100%;
+  background-color: black;
+  padding-left: 3vw;
+  margin-bottom: 3vh;
+}
+.modal-content .contenedor-close .close {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal-content .contenedor-close .close:hover, .modal-content .contenedor-close .close:focus {
+  cursor: pointer;
+}
+.modal-content .modal {
+  padding: 0 0 0 4vh;
+}
+.modal-content .modal .name-tarea {
+  width: 60%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+.modal-content .modal .list {
+  list-style: none;
+}
+.modal-content .modal .list .list-item {
+  display: block;
+  width: 100%;
+  font-weight: var(--enlacesdestacado);
+}
+.modal-content .modal .list .list-item img {
+  vertical-align: middle;
+}
+.modal-content .modal .list .list-item .list-link {
+  text-decoration: none;
+  color: black;
+}
+.modal-content .modal .list .list-item .sub-list {
+  display: none;
+  margin: auto 2vw;
+}
+.modal-content .modal .list .list-item .sub-list label {
+  font-weight: var(--sublista);
+  font-size: var(--tampequenio);
+}
+.modal-content .modal .list .list-item .sub-list label input, .modal-content .modal .list .list-item .sub-list label select {
+  margin-left: 1vw;
+  margin-bottom: 0;
+}
+.modal-content .modal .list .list-item .sub-list label .text {
+  width: 50%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 0;
+}
+.modal-content .modal .list .list-item .sub-list label button {
+  text-align: center;
+}
+.modal-content .modal .list .list-item .sub-list .list-colab {
+  margin: auto 2vw;
+}
+.modal-content .modal .list .list-item .sub-list .list-colab label {
+  font-weight: var(--sublista);
+  font-size: var(--tampequenio);
+}
+.modal-content .modal .list .list-item .sub-list .list-colab label img {
+  width: 3vh;
+  background-color: black;
+}
+
+.tarjetas {
+  background-color: rgb(244, 244, 244);
+  border-radius: 10px;
+  margin-top: 1em;
+  padding-bottom: 2vh;
+}
+.tarjetas .img-tarea {
+  width: 100%;
+  margin: 0 0 2vh 0;
+  border-radius: 10px 10px 0 0;
+}
+.tarjetas .info {
+  padding: 0 2em 0 2em;
+}
+.tarjetas .info .tag {
+  float: left;
+  margin: 0;
+  font-size: 7pt;
+  border-radius: 1em;
+  color: white;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+.tarjetas .info .borrar-modificar {
+  float: right;
+}
+.tarjetas .info .borrar-modificar button {
+  width: 4vh;
+  height: 4vh;
+  background-color: black;
+  border-radius: 2vh;
+  padding: 0;
+  margin: 0 0 0 2vh;
+}
+.tarjetas .info .borrar-modificar button img {
+  width: 2vh;
+  margin: 0.8vh auto 1vh auto;
+}
+.tarjetas .info label {
+  font-size: 12pt;
+  border-bottom: 1px solid black;
+  width: 100%;
+  clear: both;
+  margin-bottom: 1vh;
+}
+.tarjetas .info .num-check {
+  float: left;
+}
+.tarjetas .info .num-check button {
+  color: white;
+  width: 8vh;
+  background-color: black;
+  border-radius: 4vh;
+  padding: 0;
+  margin: 0 2vh 0 0;
+}
+.tarjetas .info .num-colab {
+  float: right;
+}
+.tarjetas .info .num-colab label {
+  margin-top: 0.6vh;
+  border: none;
+}
+.tarjetas .info .num-colab label img {
+  width: 4vh;
+  vertical-align: middle;
+  margin-left: 2vh;
+  background-color: black;
+  padding: 0.1vh;
+  border-radius: 10vh;
 }
 
 :root {
@@ -1066,9 +1235,33 @@ body.tema.claro .barraDeProgreso div.barra {
   --enlaces: 300;
   --enlacesdestacado:500;
   --tampequenio:10pt;
+  --sublista:400;
 }
 
-* {
+/* $temaClaro:(
+    "fondoGeneral": white,
+    "colorLetra": black,
+    "colorEnlaces": white,
+    "colorPrimario": #0D120E,
+    "colorSecundario": #232826,
+    "colorTerciario": #3C413F,
+    "colorCuaternario" #1bc5bf,
+    "fondoContenidoAcordeon": white,
+    "titulos:" 18pt,
+    "enlaces" 9pt, 
+);
+
+$temaOscuro:(
+    "fondoGeneral": white,
+    "colorLetra": black,
+    "colorEnlaces": white,
+    "colorPrimario": #0D120E,
+    "colorSecundario": #232826,
+    "colorTerciario": #3C413F,
+    "colorCuaternario" #1bc5bf,
+    "fondoContenidoAcordeon": white,
+); */
+body * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
@@ -1079,13 +1272,11 @@ body.tema.claro .barraDeProgreso div.barra {
   height: 10vh;
 }
 .cabecera .menucabecera {
-  margin: 1.5vh auto;
+  margin: 1.7vh auto auto auto;
   display: inline-block;
 }
 .cabecera .menucabecera .cabeceraizquierda {
   float: left;
-  display: flex;
-  vertical-align: middle;
   margin-left: 4vw;
 }
 .cabecera .menucabecera .cabeceraizquierda .logo {
@@ -1094,15 +1285,16 @@ body.tema.claro .barraDeProgreso div.barra {
 }
 .cabecera .menucabecera .cabeceraderecha {
   float: right;
-  display: flex;
-  vertical-align: middle;
   margin-right: 4vw;
 }
-.cabecera .menucabecera .cabeceraderecha .icon {
+.cabecera .menucabecera .cabeceraderecha .menu {
+  float: left;
+}
+.cabecera .menucabecera .cabeceraderecha .menu .icon {
   margin: auto 1vw;
   width: 6vh;
 }
-.cabecera .menucabecera .cabeceraderecha .submenu {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu {
   display: block;
   visibility: hidden;
   opacity: 0;
@@ -1115,26 +1307,26 @@ body.tema.claro .barraDeProgreso div.barra {
   border-radius: 0 0 20px 20px;
   background-color: rgb(0, 0, 0);
 }
-.cabecera .menucabecera .cabeceraderecha .submenu li {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu li {
   background-color: rgb(42, 42, 42);
   margin: 0;
 }
-.cabecera .menucabecera .cabeceraderecha .submenu li a {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu li a {
   display: block;
   padding: 1vh;
   color: white;
   font-weight: var(--enlaces);
   font-size: var(--tampequenio);
 }
-.cabecera .menucabecera .cabeceraderecha .submenu li a:hover {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu li a:hover {
   color: white;
   font-weight: var(--enlacesdestacado);
 }
-.cabecera .menucabecera .cabeceraderecha .submenu li:hover {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu li:hover {
   background-color: rgb(145, 143, 143);
   border-left: 5px solid rgb(184, 184, 184);
 }
-.cabecera .menucabecera .cabeceraderecha .submenu li:last-child {
+.cabecera .menucabecera .cabeceraderecha .menu .submenu li:last-child {
   margin-bottom: 20px;
 }
 .cabecera .menucabecera .cabeceraderecha .menu:hover {
@@ -1147,16 +1339,18 @@ body.tema.claro .barraDeProgreso div.barra {
   opacity: 1;
 }
 .cabecera .menucabecera .cabeceraderecha input {
+  vertical-align: middle;
   border-radius: 5rem;
   margin: auto 1vw;
   font-size: var(--tampequenio);
 }
 .cabecera .menucabecera .cabeceraderecha .switch {
+  vertical-align: middle;
   position: relative;
   display: inline-block;
   width: 7vh;
   height: 4vh;
-  margin: auto 1vw;
+  margin: 1vh 1vw;
 }
 .cabecera .menucabecera .cabeceraderecha .switch input {
   opacity: 0;
@@ -1233,7 +1427,7 @@ body.tema.claro .barraDeProgreso div.barra {
 }
 
 .contenedor .tablero {
-  width: 104.8%;
+  width: 100%;
   background-color: rgb(213, 213, 213);
   padding: 1em;
 }
@@ -1265,20 +1459,22 @@ body.tema.claro .barraDeProgreso div.barra {
   border-radius: 2em;
   margin: 0;
 }
+.contenedor .panel .mas .contenedor-aceptar {
+  border-radius: 0 0 2vh 2vh;
+  width: 100%;
+  background-color: black;
+  padding: 2vh;
+  text-align: center;
+}
+.contenedor .panel .mas .contenedor-aceptar button {
+  background-color: white;
+  color: black;
+}
 .contenedor .panel .grupotarjeta {
   background-color: black;
   padding: 1em;
   overflow-y: scroll;
   max-height: 50vh;
-}
-.contenedor .panel .grupotarjeta .tarjetas {
-  background-color: rgb(244, 244, 244);
-  border-radius: 10px;
-  padding: 2em;
-  margin-top: 1em;
-}
-.contenedor .panel .grupotarjeta .tarjetas:first-child {
-  margin-top: 0;
 }
 .contenedor .panel .grupotarjeta::-webkit-scrollbar {
   width: 8px;

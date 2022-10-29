@@ -1,0 +1,71 @@
+.tarjetas{
+    background-color: rgb(244, 244, 244);
+    border-radius: 10px;
+    margin-top: 1em;
+    padding-bottom: 2vh;
+    .img-tarea{
+        width: 100%;
+        margin: 0 0 2vh 0;
+        border-radius: 10px 10px 0 0;
+    }
+    .info{
+        padding: 0 2em 0 2em;
+        .tag{
+            float: left;
+            margin: 0;
+            font-size: 7pt;
+            border-radius: 1em;
+            color: white;
+            padding-right: 2em;
+            padding-left: 2em;
+        }
+        .borrar-modificar{
+            float: right;
+            button{
+                width: 4vh;
+                height: 4vh;
+                background-color: black;
+                border-radius: 2vh;
+                padding: 0;
+                margin: 0 0 0 2vh;
+                img{
+                    width: 2vh;
+                    margin: 0.8vh auto 1vh auto;
+                }
+            }
+        }
+        label{
+            font-size: 12pt;
+            border-bottom: 1px solid black;
+            width: 100%;
+            clear: both;
+            margin-bottom: 1vh;
+        }
+        .num-check{
+            float: left;
+            button{
+                color: white;
+                width: 8vh;
+                background-color: black;
+                border-radius: 4vh;
+                padding: 0;
+                margin: 0 2vh 0 0;
+            }
+        }
+        .num-colab{
+            float: right;            
+            label{
+                margin-top: 0.6vh;
+                border: none;
+                img{
+                    width: 4vh;
+                    vertical-align: middle;
+                    margin-left: 2vh;
+                    background-color: black;
+                    padding: 0.1vh;
+                    border-radius: 10vh;
+                }
+            }
+        }
+    }
+}   
