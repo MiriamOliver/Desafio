@@ -1,13 +1,25 @@
-import {Tarea} from '../clases';
+/* import {Tarea} from '../clases';
 import {listTarea} from '../index';
 
-const divTareaList = document.querySelector('.grupotarjeta')
+const divTareaList = document.querySelector('.grupotarjeta'),
 eliminar = document.querySelector('.delete'),
 editar = document.querySelector('edit');
+const divTarea = document.querySelector('.tarjetas');
 
-divTareaList.addEventListener('click', (event) => {
+export const componentesTarea = () =>{
+    eliminarTarea();
+}
+
+const eliminarTarea = () =>{
+    
+}
+
+
+ */
+
+
+/* divTareaList.addEventListener('click', (event) => {
     const nombreElemento = event.target.localName; 
-    console.log(nombreElemento);
 
     const tareaElemento = event.target.parentElement.parentElement; //Obtengo el li con el id del elemento
     const tareaId = tareaElemento.getAttribute('data-id');
@@ -21,4 +33,4 @@ divTareaList.addEventListener('click', (event) => {
         //La referencia html también hay que borrarla
         divTodoList.removeChild( todoElemento );
     }
-});
+}); */

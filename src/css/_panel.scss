@@ -1,0 +1,113 @@
+@mixin panel($tema) {
+    .contenedor{
+        .proyectos{
+            width: 104.8%;
+            background-color: map.get($tema,"colorTerciario");
+            height: 5.7vh;
+            div{
+                float: left;
+                height: 4vh;
+                margin: 0.5vh;
+                margin-right: 0;
+                background-color: map.get($tema,"colorPrimario");
+                text-align: center;
+                border-radius: 2px;
+                padding-top: 0.5vh;
+                a{
+                    color: map.get($tema,"colorLetraBlanco");
+                    font-weight: map.get($tema,"pesoMedium");
+                    margin: auto 4vh ;
+                }
+            }
+            div:active{
+                background-color: map.get($tema,"colorCuaternario");
+                a{
+                    color: map.get($tema,"colorLetraNegro");
+                    font-weight: map.get($tema,"pesoMedium");
+                }
+            }
+        }
+        .tablero{ 
+            width: 100%;
+            margin-left: 4%;
+            padding: 0;
+        }
+        .panel{
+            box-shadow: 0 2px 6px map.get($tema,"sombra");
+            margin: 2vh 1% 0 1%;
+            background-color: map.get($tema,"colorSecundario");
+            border-radius: 10px;
+            .titulo{
+                box-shadow: 0 0 8px 0 map.get($tema,"sombra");
+                border-radius: 10px 10px 0 0 ;
+                padding: 1em;
+                h5{
+                    font-weight: map.get($tema,"pesoSemibold");
+                    margin: 0 auto;
+                    text-align: center;
+                    color: map.get($tema,"colorPrimario");
+                }
+            }
+            .mas{
+                padding: 1em; 
+                text-align: center;
+                box-shadow: 0 0 8px 0 map.get($tema,"sombra");
+                border-radius: 0 0 10px 10px;
+                .btnmodal{
+                    background-color: map.get($tema,"colorPrimario");
+                    color: map.get($tema,"colorLetraBlanco");
+                    border-radius: 2em;
+                    margin: 0;
+                
+                }
+                
+            }
+            .grupotarjeta{
+                background-color: map.get($tema,"colorTerciario");
+                padding: 1em;
+                overflow-y: scroll;
+                max-height: 50vh;
+            }
+            .grupotarjeta::-webkit-scrollbar {
+                width: 8px;
+                background-color: map.get($tema,"colorSecundario");
+            }
+            .grupotarjeta::-webkit-scrollbar-thumb {
+                background: map.get($tema,"sombra");
+                border-radius: 4px;
+            }
+            .grupotarjeta::-webkit-scrollbar-thumb:active {
+                background-color: map.get($tema,"colorCuaternario");
+            }
+        }
+        
+    }
+    @media (max-width: 550px) {
+        .contenedor{
+            .tablero{
+                margin-top: 3vh;
+                .panel{
+                    width: 92%;
+                    margin: 0;
+                    margin-bottom: 2vh;
+                }
+            }
+            .tablero::-webkit-scrollbar {
+                width: 8px;
+                background-color: map.get($tema,"colorSecundario");
+            }
+            .tablero::-webkit-scrollbar-thumb {
+                background: map.get($tema,"sombra");
+                border-radius: 4px;
+            }
+            .tablero::-webkit-scrollbar-thumb:active {
+                background-color: map.get($tema,"colorCuaternario");
+            }
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }  
+    }
+}

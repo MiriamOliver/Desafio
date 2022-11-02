@@ -3,6 +3,10 @@ export class ListTarea{
         this.tarea = [];
     }
 
+    getListaTarea(){
+        return this.tarea;
+    }
+
     nuevaTarea(tarea) {
         this.tarea.push(tarea);
     }
@@ -11,16 +15,33 @@ export class ListTarea{
         this.tarea = this.tarea.filter(tarea => tarea.id != id);       
     }
 
-    marcarCompletado(id) {
-        for( const todo of this.todo ){
-            console.log(todo.id, id);
-            if (todo.id == id) { //en mi array lo tengo como numérico y al tomarlo del HTML es string, por eso dos iguales
-                todo.completado = !todo.completado;
+    getTarea(id){
+        let task = [];
+        for( const tarea of this.tarea ){
+            if (tarea.id == id) {
+                task = tarea;
+            }
+        }
+        return task;
+    }
+
+    modificarTarea(id, task){
+        for( const tarea of this.tarea ){
+            if (tarea.id == id) { 
+                tarea.tarea = task.tarea;
+                tarea.tag = task.tag;
+                tarea.image = task.image;
+                tarea.checklist = task.checklist;
             }
         }
     }
+    
 
-    eliminarCompletados() {
-        this.todo = this.todo.filter(todo => todo == !completado);
-    }
+  /*   marcarCompletado(id) {
+        for( const todo of this.todo ){
+            if (todo.id == id) { 
+                todo.completado = !todo.completado;
+            }
+        }
+    } */
 }

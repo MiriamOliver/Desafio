@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="temacolor oscuro">
     <div class="row cabecera">
         <div class="twelve columns menucabecera">
             <div class="cabeceraizquierda">
@@ -18,7 +19,7 @@
             <div class="cabeceraderecha">
                 <div class="menu">
                     <a class="profile"><img src="./assets/img/profile.svg" class="icon"></a>
-                    <ul class="submenu">
+                    <ul class="submenu submenumovil">
                         <li><a>My profile</a></li>
                         <li><a>My profile</a></li>
                         <li><a>My profile</a></li>
@@ -29,7 +30,7 @@
                 <input type="search" placeholder="Search">
                 <label class="switch">
                     <input type="checkbox">
-                    <span class="slider round"></span>
+                    <span class="slider round" id="tema"></span>
                 </label>
                 <div class="aparecepequenio menunavegacion">
                     <a><img src ="./assets/img/bars.svg" class="icon"></a>
@@ -52,7 +53,7 @@
                     <ul>
                         <li><a href=""><img src="./assets/img/plus.svg" class="icon_nav"></a></li>
                         <li><a href=""><img src="./assets/img/calendar.svg" class="icon_nav"></a></li>
-                        <li><a href=""><img src="./assets/img/board.svg" class="icon_nav"></a></li>
+                        <li class="activa"><a href=""><img src="./assets/img/board.svg" class="icon_nav"></a></li>
                         <li><a href=""><img src="./assets/img/diagram.svg" class="icon_nav"></a></li>
                         <li><a href=""><img src="./assets/img/setting.svg" class="icon_nav"></a></li>
                     </ul>
@@ -61,6 +62,17 @@
             <div class="ten columns contenedor">
                 <div class="row">
                     <div class="twelve columns">
+                        <div class="proyectos desaparecepequenio">
+                            <div>
+                                <a>Proyecto 1</a>
+                            </div>
+                            <div>
+                                <a>Proyecto 2</a>
+                            </div>
+                            <div>
+                                <a>Proyecto 3</a>
+                            </div>
+                        </div>
                         <div class="row tablero">
                             <div class="four columns panel">
                                 <div class="row">
@@ -68,98 +80,12 @@
                                         <h5>To Do</h5>
                                     </div>
                                 </div>
-                                <div class="row grupotarjeta">
-                                    <!-- <div class="twelve columns tarjetas">
-                                        
-                                    </div>
-                                    <div class="twelve columns tarjetas">
-                                        
-                                    </div> -->
+                                <div class="row grupotarjeta" id="p1">
+                                    
                                 </div>
                                 <div class="row">
                                     <div class="twelve columns mas">
-                                        <button class="btntask btnmodal">Add Task</button>
-                                        <div class="modaltask" id="addtask">
-                                            <div class="modal-content">
-                                                <div class="contenedor-close">
-                                                    <span class="close">&times;</span>
-                                                </div>
-                                                <div class="modal">
-                                                    <div>
-                                                        <input type="text" placeholder="Task" class="name-tarea">
-                                                    </div>
-                                                    <ul class="list">
-                                                        <li class="list-item">
-                                                            <div class="btn-list">
-                                                                <label href="" class="list-link">Tag
-                                                                <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
-                                                            </div>
-                                                            <div class="sub-list row">
-                                                                <div class="nine columns">
-                                                                    <label>Color : <input type="color" class="tagcolor"></label>
-                                                                    <label>Priority : 
-                                                                        <select class="prioridad">
-                                                                            <option>High</option>
-                                                                            <option>Medium</option>
-                                                                            <option>Low</option>
-                                                                        </select>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-item">
-                                                            <div class="btn-list">
-                                                                <label href="" class="list-link">Imagen
-                                                                <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
-                                                            </div>
-                                                            <div class="sub-list row">
-                                                                <div class="nine columns">
-                                                                    <label>URL : <input type="url" class="text image" placeholder="Url image"></label>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-item">
-                                                            <div class="btn-list">
-                                                                <label href="" class="list-link">Checklist
-                                                                <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
-                                                            </div>
-                                                            <div class="row sub-list">
-                                                                <div class="twelve columns">
-                                                                    <div class="barraDeProgreso">
-                                                                        <div class="barra"></div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <label class="nine columns">New SubTask : <input type="text" class="text check"></label>
-                                                                        <div class="three columns"><button class="btncheck">Add</button></div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="list-check twelve columns">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-item">
-                                                            <div class="btn-list">
-                                                                <label href="" class="list-link">Colaboradores</a>
-                                                                <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
-                                                            </div>
-                                                            <div class="row sub-list">
-                                                                <label class="nine columns">New Collaborator : <input type="text" class="text colab"></label>
-                                                                <div class="three columns"><button class="btncollaborator">Add</button></div>
-                                                                <div class="row">
-                                                                    <div class="list-colab twelve columns">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="contenedor-aceptar">
-                                                    <button class="btntask btnadd">Aceptar</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <button class="btnmodal">Add Task</button>
                                     </div>
                                 </div>
                             </div>
@@ -169,14 +95,12 @@
                                         <h5>In Progress</h5>
                                     </div>
                                 </div>
-                                <div class="row grupotarjeta">
-                                    <!-- <div class="twelve columns tarjetas">
-                                        tarjeta1
-                                    </div> -->
+                                <div class="row grupotarjeta" id="p2">
+                                    
                                 </div>
                                 <div class="row">
                                     <div class="twelve columns mas">
-                                        <button>Add Task</button>
+                                        <button class="btnmodal">Add Task</button>
                                     </div>
                                 </div>
                             </div>
@@ -186,26 +110,152 @@
                                         <h5>Done</h5>
                                     </div>
                                 </div>
-                                <div class="row grupotarjeta">
-                                    <!-- <div class="twelve columns tarjetas">
-                                        tarjeta1
-                                    </div>
-                                    <div class="twelve columns tarjetas">
-                                        tarjeta2
-                                    </div>
-                                    <div class="twelve columns tarjetas">
-                                        tarjeta3
-                                    </div> -->
+                                <div class="row grupotarjeta" id="p3">
+                                    
                                 </div>
                                 <div class="row">
                                     <div class="twelve columns mas">
-                                        <button>Add Task</button>
+                                        <button class="btnmodal">Add Task</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modaltask">
+        <div class="modal-content">
+            <div class="contenedor-close">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal">
+                <div>
+                    <input type="text" placeholder="Task" class="name-tarea">
+                </div>
+                <ul class="list">
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Tag
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="sub-list row">
+                            <div class="nine columns">
+                                <label>Color : <input type="color" class="tagcolor"></label>
+                                <label>Priority : 
+                                    <select class="prioridad">
+                                        <option>High</option>
+                                        <option>Medium</option>
+                                        <option>Low</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Imagen
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="sub-list row">
+                            <div class="nine columns">
+                                <label>URL : <input type="url" class="text image" placeholder="Url image"></label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Checklist
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="row sub-list">
+                            <div class="twelve columns">
+                                <div class="barraDeProgreso">
+                                    <div class="barra"></div>
+                                </div>
+                                <div class="row">
+                                    <label class="nine columns">New SubTask : <input type="text" class="text check"></label>
+                                    <div class="three columns"><button class="btncheck">Add</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="list-check twelve columns">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contenedor-aceptar">
+                <button class="btnadd">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modificartask">
+        <div class="modal-content">
+            <div class="contenedor-close">
+                <span class="close-modificar">&times;</span>
+            </div>
+            <div class="modal">
+                <div>
+                    <input type="text" placeholder="Task" class="name-tarea">
+                </div>
+                <ul class="list">
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Tag
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="sub-list row">
+                            <div class="nine columns">
+                                <label>Color : <input type="color" class="tagcolor" value="#fff"></label>
+                                <label>Priority : 
+                                    <select class="prioridad">
+                                        <option>High</option>
+                                        <option>Medium</option>
+                                        <option>Low</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Imagen
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="sub-list row">
+                            <div class="nine columns">
+                                <label>URL : <input type="url" class="text image" placeholder="Url image"></label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="btn-list">
+                            <label href="" class="list-link">Checklist
+                            <img src="./assets/img/arrowright.svg" class="list-arrow"></label>
+                        </div>
+                        <div class="row sub-list">
+                            <div class="twelve columns">
+                                <div class="barraDeProgreso">
+                                    <div class="barra"></div>
+                                </div>
+                                <div class="row">
+                                    <label class="nine columns">New SubTask : <input type="text" class="text check"></label>
+                                    <div class="three columns"><button class="btncheck">Add</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="list-check twelve columns">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contenedor-aceptar">
+                <button class="btnmodificar">Aceptar</button>
             </div>
         </div>
     </div>

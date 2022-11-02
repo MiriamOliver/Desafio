@@ -1,11 +1,10 @@
 
 export class Tarea{
-    constructor (tarea, tag, image, checklist, colaborador){
-        this.id = new Date().getTime();
+    constructor (id, tarea, tag, image, checklist){
+        this.id = id;
         this.tarea = tarea;
         this.tag = tag;
         this.image = image;
         this.checklist = checklist;
-        this.colaborador = colaborador;
     }
 }

@@ -1,96 +1,129 @@
-.modaltask {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 10vh; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-  
-.modal-content {
-    text-align: justify;
-    border-radius: 2vh;
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    .contenedor-close{
-        border-radius: 2vh 2vh 0 0;
-        width: 100%;
-        background-color: black;
-        padding-left: 3vw;
-        margin-bottom: 3vh;
-        .close {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover, .close:focus {
-            cursor: pointer;
-        }
+@mixin modal($tema) {
+    .modaltask, .modificartask{
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        padding-top: 10vh; 
+        left: 0;
+        top: 10vh;
+        width: 100%; 
+        height: 100vh;
+        overflow: auto; 
+        background-color: map.get($tema,"sombra"); 
+
     }
-    .modal{
-        .name-tarea{
-            width: 60%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #000000;
+    
+    .modal-content {
+        text-align: justify;
+        border-radius: 2vh;
+        position: relative;
+        background-color: map.get($tema,"colorSecundario");
+        margin: auto;
+        padding: 0;
+        width: 60%;
+        box-shadow: 0 4px 8px 0 map.get($tema,"sombra"), 0 6px 20px 0 map.get($tema,"sombra");
+        .contenedor-close{
+            border-radius: 2vh 2vh 0 0;
+            width: 100%;
+            background-color: map.get($tema,"colorPrimario");
+            padding-left: 3vw;
+            .close, .close-modificar {
+                color: map.get($tema,"colorLetraBlanco");
+                font-size: 28px;
+                font-weight: map.get($tema,"pesoSemibold");
+            }
+            .close:hover, .close:focus {
+                cursor: pointer;
+            }
         }
-        padding: 0 0 0 4vh;
-        .list{
-            list-style: none;
-            .list-item{
-                display: block;
-                width: 100%;
-                font-weight: var(--enlacesdestacado);
-                img{
-                    vertical-align: middle;
-                }
-                .list-link{
-                    text-decoration: none;
-                    color: black;
-                }
-                .sub-list{
-                    display: none;
-                    margin: auto 2vw;
-                    label{
-                        font-weight: var(--sublista);
-                        font-size: var(--tampequenio);
-                        input, select{
-                            margin-left: 1vw;
-                            margin-bottom: 0;
-                        }
-                        .text{
-                            width: 50%;
-                            background: transparent;
-                            border: none;
-                            border-bottom: 1px solid #000000;
-                            margin-bottom: 0;
+        .contenedor-aceptar{
+            border-radius: 0 0 2vh 2vh;
+            width: 100%;
+            background-color: map.get($tema,"colorPrimario");
+            padding: 2vh;
+            text-align: center;
+            button.btnadd, button.btnmodificar{
+                background-color: map.get($tema,"colorSecundario");
+                color: map.get($tema,"colorLetraNegro");
+                border-radius: 4vh;
+            }
+        }
+        .modal{
+            overflow-y: scroll;
+            max-height: 40vh;
+            background-color: map.get($tema,"colorSecundario");
+            width: 100%;
+            padding: 0 0 0 4vh;
+            .name-tarea{
+                margin-top: 3vh;
+                width: 60%;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid map.get($tema,"colorPrimario");
+            }
+            .list{
+                list-style: none;
+                .list-item{
+                    display: block;
+                    width: 100%;
+                    font-weight: map.get($tema,"pesoMedium");
+                    img{
+                        vertical-align: middle;
+                    }
+                    .list-link{
+                        text-decoration: none; 
+                        color: map.get($tema,"colorLetraNegro");  
+                    }
+                    .sub-list{
+                        display: none;
+                        margin: auto 2vw;
+                        label{
+                            font-weight: map.get($tema,"pesoRegular");
+                            font-size: map.get($tema,"caractModal");
+                            input, select{
+                                margin-left: 1vw;
+                                margin-bottom: 0;
+                            }
+                            .text{
+                                width: 50%;
+                                background: transparent;
+                                border: none;
+                                border-bottom: 1px solid map.get($tema,"colorPrimario");
+                                margin-bottom: 0;
+                            }
                         }
                         button{
                             text-align: center;
+                            background-color: map.get($tema,"colorTerciario");
+                            border-radius: 3vh; 
+                            color: map.get($tema,"colorLetraBlanco");
                         }
-                    }
-                    .list-colab{
-                        margin: auto 2vw;
-                        label{
-                            font-weight: var(--sublista);
-                            font-size: var(--tampequenio);
-                            img{
-                                width: 3vh;
-                                background-color: black;
+                        .list-colab{
+                            margin: auto 2vw;
+                            label{
+                                font-weight: map.get($tema,"pesoRegular");
+                                font-size: map.get($tema,"caractModal");
+                                img{
+                                    width: 3vh;
+                                    background-color: map.get($tema,"colorPrimario");
+                                }
                             }
                         }
                     }
+                    
                 }
-                
             }
+        }
+        .modal::-webkit-scrollbar {
+            width: 8px;
+            background-color: #ccc;
+        }
+        .modal::-webkit-scrollbar-thumb {
+            background: map.get($tema,"colorTerciario");
+            border-radius: 4px;
+        }
+        .modal::-webkit-scrollbar-thumb:active {
+            background-color: map.get($tema,"colorCuaternario");
         }
     }
 }
