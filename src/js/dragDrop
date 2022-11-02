@@ -28,26 +28,5 @@ function dragLeave(e) {
 
 function drop(e) {
     const id = e.dataTransfer.getData('text/plain');
-    console.log(e.target);
-    console.log(id);
     e.target.appendChild(document.getElementById(id));
-    console.log(e.target.id);
-    /* const carta = document.querySelector('#' + id);
-    const padre = carta.parentNode;
-    if(carta == padre.lastChild){
-        let tipoPadreDestino = e.currentTarget.id.charAt(0);
-        if(comprobarMoverCarta(carta, e.currentTarget, tipoPadreDestino)){
-            let tipoPadreOrigen = padre.id.charAt(0);
-            moverCarta(tipoPadreOrigen, tipoPadreDestino, padre.id.slice(1), e.currentTarget.id.slice(1));
-            e.currentTarget.appendChild(carta);
-            carta.classList.remove('hide');
-            const idUltimaHija = padre.lastChild.id;
-            padre.removeChild(padre.lastElementChild);
-            let imgultimaHija = colocarCarta(idUltimaHija.slice(1), true);
-            padre.append(imgultimaHija);
-        }else{
-            let imgHija = colocarCarta(id.slice(1), true);
-            padre.append(imgHija);
-        }
-    } */
-} 
+}

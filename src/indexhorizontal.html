@@ -9,12 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mia.css">
 </head>
-<body class="temacolor oscuro">
+<body class="temacolor claro">
     <div class="row cabecera">
         <div class="twelve columns menucabecera">
             <div class="cabeceraizquierda">
                 <img src="./assets/img/logoblanco.png"  class="logo">
+            </div>
+            <div class="menuhorizontal desaparecepequenio">
+                <nav>
+                    <ul>
+                        <li><a href=""><img src="./assets/img/plus.svg" class="icon_nav"></a></li>
+                        <li><a href=""><img src="./assets/img/calendar.svg" class="icon_nav"></a></li>
+                        <li class="activa"><a href=""><img src="./assets/img/board.svg" class="icon_nav"></a></li>
+                        <li><a href=""><img src="./assets/img/diagram.svg" class="icon_nav"></a></li>
+                        <li><a href=""><img src="./assets/img/setting.svg" class="icon_nav"></a></li>
+                    </ul>
+                </nav>
             </div>
             <div class="cabeceraderecha">
                 <div class="menu">
@@ -61,74 +73,57 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class=" twelve columns">
-            <div class="two columns navegador desaparecepequenio">
-                <nav>
-                    <ul>
-                        <li><a href=""><img src="./assets/img/plus.svg" class="icon_nav"></a></li>
-                        <li><a href=""><img src="./assets/img/calendar.svg" class="icon_nav"></a></li>
-                        <li class="activa"><a href=""><img src="./assets/img/board.svg" class="icon_nav"></a></li>
-                        <li><a href=""><img src="./assets/img/diagram.svg" class="icon_nav"></a></li>
-                        <li><a href=""><img src="./assets/img/setting.svg" class="icon_nav"></a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="ten columns contenedor">
-                <div class="row">
-                    <div class="twelve columns">
-                        <div class="row tablero">
-                            <div class="four columns panel">
-                                <div class="row">
-                                    <div class="twelve columns titulo">
-                                        <h5>To Do</h5>
-                                    </div>
-                                </div>
-                                <div class="row grupotarjeta" id="p1">
-                                    
-                                </div>
-                                <div class="row">
-                                    <div class="twelve columns mas">
-                                        <button class="btnmodal">Add Task</button>
-                                    </div>
-                                </div>
+        <div class="row">          
+            <div class="eleven columns contenedor">
+                <div class="row tablero">
+                    <div class="four columns panel">
+                        <div class="row">
+                            <div class="twelve columns titulo">
+                                <h5>To Do</h5>
                             </div>
-                            <div class="four columns panel">
-                                <div class="row">
-                                    <div class="twelve columns titulo">
-                                        <h5>In Progress</h5>
-                                    </div>
-                                </div>
-                                <div class="row grupotarjeta" id="p2">
-                                    
-                                </div>
-                                <div class="row">
-                                    <div class="twelve columns mas">
-                                        <button class="btnmodal">Add Task</button>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="row grupotarjeta" id="p1">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="twelve columns mas">
+                                <button class="btnmodal">Add Task</button>
                             </div>
-                            <div class="four columns panel">
-                                <div class="row">
-                                    <div class="twelve columns titulo">
-                                        <h5>Done</h5>
-                                    </div>
-                                </div>
-                                <div class="row grupotarjeta" id="p3">
-                                    
-                                </div>
-                                <div class="row">
-                                    <div class="twelve columns mas">
-                                        <button class="btnmodal">Add Task</button>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="four columns panel">
+                        <div class="row">
+                            <div class="twelve columns titulo">
+                                <h5>In Progress</h5>
+                            </div>
+                        </div>
+                        <div class="row grupotarjeta" id="p2">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="twelve columns mas">
+                                <button class="btnmodal">Add Task</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four columns panel">
+                        <div class="row">
+                            <div class="twelve columns titulo">
+                                <h5>Done</h5>
+                            </div>
+                        </div>
+                        <div class="row grupotarjeta" id="p3">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="twelve columns mas">
+                                <button class="btnmodal">Add Task</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <div class="modaltask">
         <div class="modal-content">
             <div class="contenedor-close">

@@ -16,9 +16,13 @@
         }
     }
     footer{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         background-color: map.get($tema,"colorPrimario");
         text-align: center;
-        padding: 1.5vh;
+        padding: 1.5vh 0;
         span{
             color: map.get($tema,"colorLetraBlanco");
         }

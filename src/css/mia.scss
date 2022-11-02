@@ -1,15 +1,6 @@
 @use "sass:map";
 @import 'normalize', 'skeleton', 'miscelanea', 'modal', 'tarea', 'panel', 'cabecera', 'menus';
 
-/* :root{
-    --titulos:600;
-    --titulillo:; 
-    --enlaces: 300;
-    --enlacesdestacado:500;
-    --tampequenio:10pt;
-    --sublista:400;
-} */
-
 $temaOscuro:(
     "colorPrimario": #020202,
     "colorSecundario": #fdfdfd,
@@ -96,6 +87,8 @@ body.temacolor.claro {
         }
     }
 }
+
+
 
 @media (min-width: 550px) {
 

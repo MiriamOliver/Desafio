@@ -1,8 +1,8 @@
 import '../src/css/mia.css'
-import { Tarea, ListTarea } from './clases';
+import {ListTarea } from './clases';
 
 import { addEventosDrop } from '../src/js/dragDrop';
-import {cerrarModal, iniciarTablero} from '../src/js/modal';
+import {cerrarModal} from '../src/js/modal';
 import {cerrarModificarModal} from '../src/js/modal';
 import {abrirModal} from '../src/js/modal';
 import {crearTarjeta} from '../src/js/modal';

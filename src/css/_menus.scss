@@ -2,17 +2,17 @@
     .navegador nav{
         background-color: map.get($tema,"colorTerciario");
         width: 100%;
-        height: 83.6vh;
+        height: 80vh;
         overflow: hidden;
         ul{
-            margin: 10vh auto;
+            margin: 0 auto;
             list-style: none; 
             li{
                 display: block;
                 align-items: center;
                 background-color: map.get($tema,"colorLetraBlanco");
                 padding: 1.8vh 0;
-                margin: 6vh auto 6vh 30%;
+                margin: 5vh auto 5vh 30%;
                 border-top-left-radius: 2.5vh;
                 border-bottom-left-radius: 2.5vh;
                 a{
@@ -41,6 +41,52 @@
             } 
         }
     }
+
+    .menuhorizontal{
+        width: 40%;
+        float: left;
+        height: 0;
+        position: absolute;
+        top: -11vh;
+        left: 13.5%;
+        nav{
+            ul{
+                margin: 0;
+                list-style: none; 
+                li{
+                    display: inline-block;
+                    align-items: center;
+                    background-color: map.get($tema,"colorLetraBlanco");
+                    padding: 1.8vh 0;
+                    margin-right:4vh;
+                    border-radius: 2.5vh;
+                    a{
+                        color: black;
+                        font-weight: map.get($tema,"pesoMedium");
+                        text-decoration: none;
+                        padding: 2vh 0 2vh 2vh;
+                        .icon_nav{
+                            vertical-align: middle;
+                            margin-right: 1.2vw;
+                            width: 2.8vh;
+                            background-color: map.get($tema,"colorTerciario");
+                            padding: 0.6vh;
+                            border-radius: 1vh;
+                        }
+                    }
+                }
+                li.activa{
+                    background-color: map.get($tema,"colorCuaternario");
+                }
+                li:active{
+                    background-color: map.get($tema,"colorCuaternario");
+                }
+                li:last-child{
+                    margin-top: 12vh;
+                } 
+            }
+        }
+    }    
 
     @media (max-width: 550px) {
         .cabecera{

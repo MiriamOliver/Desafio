@@ -10,16 +10,13 @@ const modal = document.querySelector('.modaltask'),
       divTareaList = document.querySelectorAll('.grupotarjeta'),
       inputTarea = document.querySelector('.name-tarea'),
       divCheckList = document.querySelector('.list-check'),
-      eliminar = document.querySelector('.delete'),
       modificarmodal = document.querySelector('.modificartask'),
       modificar = document.querySelector('.btnmodificar'),
       cerrarmodificar = modificarmodal.querySelector('.close-modificar'),
-      editar = modificarmodal.querySelector('.edit'),
       btnModCheck = modificarmodal.querySelector('.btncheck'),
       divModCheck = modificarmodal.querySelector('.list-check'),
       tema = document.getElementById('tema');
 
-      let collaborator = [];
       let checklist = [];
       let panel;
 
@@ -50,7 +47,6 @@ export const cerrarModal = () =>{
     });
     
 }
-
 
 document.querySelectorAll('.btn-list').forEach(elemento => {
     elemento.addEventListener('click', function(){
@@ -95,7 +91,7 @@ export const crearTarjeta = () =>{
             let tag = crearTag();
             let img = document.querySelector('.image').value;
             if(inputTarea.value.length > 0) { 
-                const tarea = new Tarea(id, inputTarea.value, tag, img, checklist, collaborator);
+                const tarea = new Tarea(id, inputTarea.value, tag, img, checklist);
                 checklist = [];
                 listTarea.nuevaTarea(tarea);
                 crearListaTarea(tarea);
@@ -177,7 +173,6 @@ divTareaList.forEach(divTarea => {
             crearListaModificada(tarea.checklist[i]);
         }
         modificarTarjeta(tarea.id, tarea.checklist, tareaElemento, infotarea);
-        limpiarModal();
     }
 
 
@@ -203,11 +198,17 @@ divTareaList.forEach(divTarea => {
             }
             checklist = [];
         if(txt.length > 0) { 
-            const tarea = new Tarea(id, txt, tag, img, check, collaborator);
+            const tarea = new Tarea(id, txt, tag, img, check);
             listTarea.modificarTarea(id, tarea);
             let tareas = listTarea.getListaTarea();
+            let listatareas = tareaElemento.parentElement.parentElement;
             console.log(tareas);
-            tareaElemento.parentElement.parentElement.innerHTML = '';
+            console.log(tareaElemento);
+            console.log(tareaElemento.nextElementSibling);
+            console.log(tareaElemento.parentElement);
+            console.log(tareaElemento.parentElement.parentElement.children);
+            console.log(tareaElemento.parentElement.parentElement);
+            listatareas.innerHTML = '';
             for ( let i = 0; i < tareas.length; i++) {
                 crearListaTarea(tareas[i]);
             }
@@ -223,7 +224,8 @@ divTareaList.forEach(divTarea => {
         infotarea.querySelector('.tagcolor').value = '000000';
         infotarea.querySelector('.prioridad').value = 'High';
         infotarea.querySelector('.image').value = '';
-        divModCheck.innerHTML = '';
+        infotarea.querySelector('.list-check').innerHTML = '';
+        console.log(infotarea.querySelector('.list-check'));
         infotarea.querySelector('.check').value = '';
     }
 

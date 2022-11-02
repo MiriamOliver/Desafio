@@ -24,7 +24,6 @@
         box-shadow: 0 4px 8px 0 map.get($tema,"sombra"), 0 6px 20px 0 map.get($tema,"sombra");
         .contenedor-close{
             border-radius: 2vh 2vh 0 0;
-            width: 100%;
             background-color: map.get($tema,"colorPrimario");
             padding-left: 3vw;
             .close, .close-modificar {
@@ -38,7 +37,6 @@
         }
         .contenedor-aceptar{
             border-radius: 0 0 2vh 2vh;
-            width: 100%;
             background-color: map.get($tema,"colorPrimario");
             padding: 2vh;
             text-align: center;
@@ -52,7 +50,6 @@
             overflow-y: scroll;
             max-height: 40vh;
             background-color: map.get($tema,"colorSecundario");
-            width: 100%;
             padding: 0 0 0 4vh;
             .name-tarea{
                 margin-top: 3vh;

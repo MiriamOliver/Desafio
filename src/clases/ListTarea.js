@@ -36,12 +36,4 @@ export class ListTarea{
         }
     }
     
-
-  /*   marcarCompletado(id) {
-        for( const todo of this.todo ){
-            if (todo.id == id) { 
-                todo.completado = !todo.completado;
-            }
-        }
-    } */
 }
