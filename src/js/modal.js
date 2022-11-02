@@ -202,12 +202,6 @@ divTareaList.forEach(divTarea => {
             listTarea.modificarTarea(id, tarea);
             let tareas = listTarea.getListaTarea();
             let listatareas = tareaElemento.parentElement.parentElement;
-            console.log(tareas);
-            console.log(tareaElemento);
-            console.log(tareaElemento.nextElementSibling);
-            console.log(tareaElemento.parentElement);
-            console.log(tareaElemento.parentElement.parentElement.children);
-            console.log(tareaElemento.parentElement.parentElement);
             listatareas.innerHTML = '';
             for ( let i = 0; i < tareas.length; i++) {
                 crearListaTarea(tareas[i]);
